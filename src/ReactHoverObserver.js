@@ -17,6 +17,7 @@ export default class extends React.Component {
         this.onMouseLeave = this.onMouseLeave.bind(this);
         this.onMouseOver = this.onMouseOver.bind(this);
         this.onMouseOut = this.onMouseOut.bind(this);
+        this.onClick = this.onClick.bind(this);
         this.setIsHovering = this.setIsHovering.bind(this);
         this.unsetIsHovering = this.unsetIsHovering.bind(this);
         this.componentWillUnmount = this.componentWillUnmount.bind(this);
@@ -34,6 +35,7 @@ export default class extends React.Component {
         onMouseLeave: ({ unsetIsHovering }) => unsetIsHovering(),
         onMouseOver: noop,
         onMouseOut: noop,
+        onClick: noop,
         shouldDecorateChildren: true
     };
 
@@ -46,6 +48,7 @@ export default class extends React.Component {
         onMouseLeave: PropTypes.func,
         onMouseOver: PropTypes.func,
         onMouseOut: PropTypes.func,
+        onClick: PropTypes.func,
         shouldDecorateChildren: PropTypes.bool
     };
 
@@ -75,6 +78,14 @@ export default class extends React.Component {
 
     onMouseOut(e) {
         this.props.onMouseOut({
+            e,
+            setIsHovering: this.setIsHovering,
+            unsetIsHovering: this.unsetIsHovering
+        });
+    }
+
+    onClick(e) {
+        this.props.onClick({
             e,
             setIsHovering: this.setIsHovering,
             unsetIsHovering: this.unsetIsHovering
@@ -159,6 +170,7 @@ export default class extends React.Component {
                 'onMouseLeave',
                 'onMouseOver',
                 'onMouseOut',
+                'onClick',
                 'shouldDecorateChildren'
             ])
         );
@@ -169,7 +181,8 @@ export default class extends React.Component {
                 onMouseEnter: this.onMouseEnter,
                 onMouseLeave: this.onMouseLeave,
                 onMouseOver: this.onMouseOver,
-                onMouseOut: this.onMouseOut
+                onMouseOut: this.onMouseOut,
+                onClick: this.onClick
             }}>
                 { this.renderChildrenWithProps(children, childProps) }
             </div>

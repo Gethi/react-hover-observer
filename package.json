@@ -1,17 +1,17 @@
 {
-  "name": "react-hover-observer",
-  "version": "2.1.0",
-  "description": "A React component that notifies its children of hover interactions.",
+  "name": "react-interactions-observer",
+  "version": "2.2.0",
+  "description": "A React component that notifies its children of interactions.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ethanselzer/react-hover-observer.git"
+    "url": "https://github.com/Gethi/react-hover-observer.git"
   },
-  "author": "Ethan Selzer <ethanselzer@gmail.com>",
+  "author": ["Ethan Selzer <ethanselzer@gmail.com>", "Antoine Bigard"],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ethanselzer/react-hover-observer/issues"
+    "url": "https://github.com/Gethi/react-hover-observer/issues"
   },
-  "homepage": "https://github.com/ethanselzer/react-hover-observer",
+  "homepage": "https://github.com/Gethi/react-hover-observer",
   "keywords": [
     "react",
     "mouseenter",
